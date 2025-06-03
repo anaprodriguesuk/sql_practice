@@ -28,4 +28,40 @@ VALUES ('01', 'Snow', 'Jon', 'E', '2014-04-05', '201', 6),
 -- Return all records which have a COURSE_CODE of 305 --
 
 
-SELECT * FROM Students;
+SELECT * FROM Students
+WHERE COURSE_CODE = '305';
+
+
+-- Change COURSE_CODE to 304 for the person number 07 --
+
+
+UPDATE Students
+SET COURSE_CODE = '304'
+WHERE STU_NUM = '07';
+
+
+-- Delete the row of the person named Jamie Lannister --
+
+
+DELETE FROM Students
+WHERE STU_SNAME = 'Lannister'
+  AND STU_FNAME = 'Jamie'
+  AND STU_STARTDATE = '2012-09-05'
+  AND COURSE_CODE = '101'
+  AND PROJ_NUM = 2;
+
+
+-- Change the PROJ_NUM to 14 for those students who started before 01/01/2016 and COURSE_CODE is at least 201 --
+
+
+UPDATE Students
+SET PROJ_NUM = 14
+WHERE STU_STARTDATE < '2016-01-01'
+  AND COURSE_CODE >= '201';
+
+
+-- Delete the Students table entirely --
+
+
+DROP TABLE Students;
+
